@@ -6,11 +6,28 @@
 /*   By: topiana- <topiana-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/11 19:48:50 by topiana-          #+#    #+#             */
-/*   Updated: 2025/01/11 19:56:16 by topiana-         ###   ########.fr       */
+/*   Updated: 2025/01/11 23:05:42 by topiana-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+/*takes a head pointer as a parameter
+RETURNS the number of nodes linked, 0 if the head is NULL*/
+size_t	ft_stklen(t_stack *head)
+{
+	size_t	i;
+
+	if (!head)
+		return (0);
+	i = 0;
+	while (head)
+	{
+		head = head->next;
+		i++;
+	}
+	return (i);
+}
 
 /*takes a head pointer as a parameter,
 deletes the 'stack' pointed by the head*/

@@ -3,14 +3,40 @@
 /*                                                        :::      ::::::::   */
 /*   more_list_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: topiana- <topiana-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: totommi <totommi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/11 19:48:50 by topiana-          #+#    #+#             */
-/*   Updated: 2025/01/11 23:05:42 by topiana-         ###   ########.fr       */
+/*   Updated: 2025/01/12 14:47:47 by totommi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	ft_print_arr(char **arr)
+{
+	int	i;
+
+	if (!arr)
+		return ;
+	i = 0;
+	while (arr[i] != NULL)
+	{
+		ft_printf("%s\n", arr[i]);
+		i++;
+	}
+}
+
+size_t ft_arrlen(char **arr)
+{
+	size_t	i;
+
+	if (!arr)
+		return (0);
+	i = 0;
+	while (arr[i] != NULL)
+		i++;
+	return (i);
+}
 
 /*takes a head pointer as a parameter
 RETURNS the number of nodes linked, 0 if the head is NULL*/
@@ -45,32 +71,42 @@ void	ft_stkdel(t_stack *head)
 
 /*takes both argc and argv as params
 creates the 'stacks' and fills 'a' with the numbers
-RETURNS: 0 all good, 1 error*/
-int	populate_stack(t_stack **stack_a, t_stack **stack_b, int argc, char *argv[])
+RETURNS: 1 all good, 0 error*/
+int	populate_stack(t_stack **stack_a, t_stack **stack_b, int argc, char *args[])
 {
 	int	i;
-	int	nb;
 	t_stack	*node;
 	
 	*stack_a = NULL;
 	*stack_b = NULL;
-	i = 1;
+	//ft_printf("populating:\n");
+	//ft_print_arr(args);
+	i = 0;
 	while (i < argc)
 	{
-		nb = ft_atoi(argv[i]);
-		if (!nb && !real_zero(argv[i]))
-		{
-			ft_printf("'%s' wrong parameter\n", argv[i]);
-			return (1);
-		}
-		node = ft_stknew(ft_atoi(argv[i]));
+		node = ft_stknew(ft_atoi(args[i]));
 		if (!node)
 		{
 			ft_printf("malloc failure :/\n");
-			return (1);
+			return (0);
 		}
 		ft_stkadd_back(stack_a, node);
 		i++;
 	}
+	return (1);
+}
+
+/*frees a array of char pointers*/
+int	ft_free_arr(char **arr)
+{
+	int	i;
+
+	i = 0;
+	while (arr[i] != NULL)
+	{
+		free(arr[i]);
+		i++;
+	}
+	free(arr);
 	return (0);
 }

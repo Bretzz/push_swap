@@ -6,7 +6,7 @@
 /*   By: totommi <totommi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/11 18:20:45 by topiana-          #+#    #+#             */
-/*   Updated: 2025/01/12 05:59:55 by totommi          ###   ########.fr       */
+/*   Updated: 2025/01/12 09:39:43 by totommi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,6 @@ int	rrb(t_stack **head_a, t_stack **head_b)
 	ft_stk_semi_last(*head_b)->next = NULL;
 	temp->next = *head_b;
 	*head_b = temp;
+	ft_printf("rrb\n");
 	return (1);
 }

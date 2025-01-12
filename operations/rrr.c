@@ -6,7 +6,7 @@
 /*   By: totommi <totommi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/11 18:21:54 by topiana-          #+#    #+#             */
-/*   Updated: 2025/01/12 06:00:14 by totommi          ###   ########.fr       */
+/*   Updated: 2025/01/12 14:16:51 by totommi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,21 @@
 RETURNS: 1 all good, 0 error*/
 int	rrr(t_stack **head_a, t_stack **head_b)
 {
-	if (!ra(head_a, head_b))
+	t_stack	*temp_a;
+	t_stack	*temp_b;
+	
+	if (!*head_a || !(*head_a)->next)
 		return (0);
-	if (!rb(head_a, head_b))
+	if (!*head_b || !(*head_b)->next)
 		return (0);
+	temp_a = ft_stklast(*head_a);
+	temp_b = ft_stklast(*head_b);
+	ft_stk_semi_last(*head_a)->next = NULL;
+	ft_stk_semi_last(*head_b)->next = NULL;
+	temp_a->next = *head_a;
+	temp_b->next = *head_b;
+	*head_a = temp_a;
+	*head_b = temp_b;
+	ft_printf("rrr\n");
 	return (1);
 }

@@ -6,7 +6,7 @@
 /*   By: totommi <totommi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/11 17:32:22 by topiana-          #+#    #+#             */
-/*   Updated: 2025/01/12 05:58:47 by totommi          ###   ########.fr       */
+/*   Updated: 2025/01/12 09:39:17 by totommi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,6 @@ int	pa(t_stack **head_a, t_stack **head_b)
 	(*head_b)->next = *head_a;
 	*head_a = *head_b;
 	*head_b = next_b;
+	ft_printf("pa\n");
 	return (1);
 }

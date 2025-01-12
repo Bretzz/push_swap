@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: topiana- <topiana-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: totommi <totommi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/11 17:16:01 by topiana-          #+#    #+#             */
-/*   Updated: 2025/01/11 23:05:50 by topiana-         ###   ########.fr       */
+/*   Updated: 2025/01/12 14:38:26 by totommi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,14 @@ int		ft_stkadd_back(t_stack **head, t_stack *node);
 void	ft_stkdel(t_stack *head);
 int		populate_stack(t_stack **stack_a, t_stack **stack_b, int argc, char *argv[]);
 void	print_stack(t_stack *head_a, t_stack *head_b);
-size_t		ft_stklen(t_stack *head);
+size_t	ft_stklen(t_stack *head);
+int		ft_free_arr(char **arr);
+void	ft_print_arr(char **arr);
+size_t ft_arrlen(char **arr);
+
+//checkers
 int		real_zero(char *s);
+int		parse_ready(int argc, char *argv[]);
+int		stk_issorted(t_stack *head);
 
 #endif

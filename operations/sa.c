@@ -6,7 +6,7 @@
 /*   By: totommi <totommi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/11 17:19:37 by topiana-          #+#    #+#             */
-/*   Updated: 2025/01/12 06:00:25 by totommi          ###   ########.fr       */
+/*   Updated: 2025/01/12 09:39:56 by totommi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,6 @@ int	sa(t_stack **head_a, t_stack **head_b)
 	(*head_a)->next = third;
 	second->next = *head_a;
 	*head_a = second;
+	ft_printf("sa\n");
 	return (1);
 }

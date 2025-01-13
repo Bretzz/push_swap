@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rra.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: totommi <totommi@student.42.fr>            +#+  +:+       +#+        */
+/*   By: topiana- <topiana-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/11 18:06:22 by topiana-          #+#    #+#             */
-/*   Updated: 2025/01/12 09:39:35 by totommi          ###   ########.fr       */
+/*   Updated: 2025/01/13 13:29:02 by topiana-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ RETURNS: 1 all good, 0 error*/
 int	rra(t_stack **head_a, t_stack **head_b)
 {
 	t_stack	*temp;
-	
+
 	(void)(head_b);
 	if (!*head_a || !(*head_a)->next)
 		return (0);

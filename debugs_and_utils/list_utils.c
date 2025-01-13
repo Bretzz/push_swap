@@ -6,34 +6,11 @@
 /*   By: topiana- <topiana-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/11 18:15:48 by topiana-          #+#    #+#             */
-/*   Updated: 2025/01/11 20:29:58 by topiana-         ###   ########.fr       */
+/*   Updated: 2025/01/13 13:29:59 by topiana-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-/*takes a head pointer as parameter and prints the whole stack*/
-void	print_stack(t_stack *head_a, t_stack *head_b)
-{
-	while (head_a || head_b)
-	{
-		if (head_a)
-		{
-			ft_printf("%i", head_a->nb);
-			head_a = head_a->next;
-		}
-		else
-			ft_printf(" ");
-		ft_printf(" ");
-		if (head_b)
-		{
-			ft_printf("%i", head_b->nb);
-			head_b = head_b->next;
-		}
-		ft_printf("\n");
-	}
-	ft_printf("- -\na b\n\n");
-}
 
 /*takes an integer as parameter and returns a mallocated node of a stack*/
 t_stack	*ft_stknew(int nb)
@@ -69,7 +46,7 @@ int	ft_stkadd_back(t_stack **head, t_stack *node)
 t_stack	*ft_stklast(t_stack *head)
 {
 	t_stack	*temp;
-	
+
 	if (!head)
 		return (NULL);
 	temp = head;
@@ -82,7 +59,7 @@ t_stack	*ft_stklast(t_stack *head)
 t_stack	*ft_stk_semi_last(t_stack *head)
 {
 	t_stack	*temp;
-	
+
 	if (!head)
 		return (NULL);
 	temp = head;

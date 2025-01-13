@@ -1,32 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rrb.c                                              :+:      :+:    :+:   */
+/*   best_helpers.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: topiana- <topiana-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/11 18:20:45 by topiana-          #+#    #+#             */
-/*   Updated: 2025/01/13 13:28:56 by topiana-         ###   ########.fr       */
+/*   Created: 2025/01/13 13:45:03 by topiana-          #+#    #+#             */
+/*   Updated: 2025/01/13 13:46:10 by topiana-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/*takes the pointers to both the list heads
-"Shift down all elements of stack 'b' by 1.
-The last element becomes the first one."
-RETURNS: 1 all good, 0 error*/
-int	rrb(t_stack **head_a, t_stack **head_b)
+int	rra_rb(t_stack **head_a, t_stack **head_b, int a, int b)
 {
-	t_stack	*temp;
+	cycle_move(head_a, head_b, a, &rra);
+	cycle_move(head_a, head_b, b, &rb);
+	return (a + b);
+}
 
-	(void)(head_a);
-	if (!*head_b || !(*head_b)->next)
-		return (0);
-	temp = ft_stklast(*head_b);
-	ft_stk_semi_last(*head_b)->next = NULL;
-	temp->next = *head_b;
-	*head_b = temp;
-	ft_printf("rrb\n");
-	return (1);
+int	ra_rrb(t_stack **head_a, t_stack **head_b, int a, int b)
+{
+	cycle_move(head_a, head_b, a, &ra);
+	cycle_move(head_a, head_b, b, &rrb);
+	return (a + b);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checkers.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: totommi <totommi@student.42.fr>            +#+  +:+       +#+        */
+/*   By: topiana- <topiana-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/11 19:39:16 by topiana-          #+#    #+#             */
-/*   Updated: 2025/01/13 01:57:31 by totommi          ###   ########.fr       */
+/*   Updated: 2025/01/13 13:29:41 by topiana-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,19 +25,6 @@ int	stk_issorted(t_stack *head)
 			return (0);
 	}
 	return (1);
-}
-
-/*takes a string as param and check if it contains a zero
-RETURNS: 0 it doesn't, 1 it does*/
-int	real_zero(char *s)
-{
-	while (*s)
-	{
-		if (*s == '0')
-			return (1);
-		s++;
-	}
-	return (0);
 }
 
 /*reverse strcmp*/
@@ -65,7 +52,7 @@ RETURNS: 1 it will, 0 it won't */
 int	overflow_check(char *s)
 {
 	size_t	len;
-	
+
 	if (!s)
 		return (0);
 	len = ft_strlen(s);
@@ -103,37 +90,28 @@ int	valid_int(char *s)
 	1. only integers (no floats) bigger than INT_MIN and smaller than INT_MAX
 	2. no repetitions
 RETURNS: 1 all good, 0 error*/
-int	parse_ready(int argc, char *args[])
+int	parse_ready(int len, char *args[])
 {
 	int	i;
 	int	j;
 
 	i = 0;
-	while (i < argc)
+	while (i < len)
 	{
 		if (!valid_int(args[i]))
-		{
-			//ft_printf("invalid int '%s'\n", args[i]);
 			return (0);
-		}
 		if (overflow_check(args[i]))
-		{
-			//ft_printf("overflowing '%s'\n", args[i]);
 			return (0);
-		}
 		i++;
 	}
 	i = 0;
-	while (i < argc)
+	while (i < len)
 	{
 		j = 0;
-		while (j < argc)
+		while (j < len)
 		{
 			if (i != j && ft_atoi(args[i]) == ft_atoi(args[j]))
-			{
-				//ft_printf("double '%s'\n", args[i]);
 				return (0);
-			}
 			j++;
 		}
 		i++;

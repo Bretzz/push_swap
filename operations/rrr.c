@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rrr.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: totommi <totommi@student.42.fr>            +#+  +:+       +#+        */
+/*   By: topiana- <topiana-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/11 18:21:54 by topiana-          #+#    #+#             */
-/*   Updated: 2025/01/12 14:16:51 by totommi          ###   ########.fr       */
+/*   Updated: 2025/01/13 13:28:47 by topiana-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	rrr(t_stack **head_a, t_stack **head_b)
 {
 	t_stack	*temp_a;
 	t_stack	*temp_b;
-	
+
 	if (!*head_a || !(*head_a)->next)
 		return (0);
 	if (!*head_b || !(*head_b)->next)

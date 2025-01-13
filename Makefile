@@ -15,13 +15,14 @@ CFLAGS := -Wall -Wextra -Werror
 SRCS := main.c \
 		pa.c pb.c ra.c rb.c rr.c \
 		rra.c rrb.c rrr.c sa.c sb.c ss.c \
-		list_utils.c more_list_utils.c checkers.c
+		list_utils.c more_list_utils.c checkers.c \
+		algoritm.c best_rotator.c best_helpers.c handle_a.c mini_algo.c
 
 #archive file names
 ARS	:= libft/libft.a
 
 #folders containing source files [*.c] 
-VPATH = operations debugs_and_utils
+VPATH = operations debugs_and_utils algoritm
 
 EXE = nyaa
 OBJS = $(patsubst %.c, $(OBJ_DIR)/%.o, $(notdir $(SRCS)))

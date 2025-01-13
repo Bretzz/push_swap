@@ -3,30 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   more_list_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: totommi <totommi@student.42.fr>            +#+  +:+       +#+        */
+/*   By: topiana- <topiana-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/11 19:48:50 by topiana-          #+#    #+#             */
-/*   Updated: 2025/01/12 14:47:47 by totommi          ###   ########.fr       */
+/*   Updated: 2025/01/13 13:30:44 by topiana-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_print_arr(char **arr)
-{
-	int	i;
-
-	if (!arr)
-		return ;
-	i = 0;
-	while (arr[i] != NULL)
-	{
-		ft_printf("%s\n", arr[i]);
-		i++;
-	}
-}
-
-size_t ft_arrlen(char **arr)
+/*count the number of string in arr*/
+size_t	ft_arrlen(char **arr)
 {
 	size_t	i;
 
@@ -59,7 +46,7 @@ size_t	ft_stklen(t_stack *head)
 deletes the 'stack' pointed by the head*/
 void	ft_stkdel(t_stack *head)
 {
-	t_stack *next;
+	t_stack	*next;
 
 	while (head)
 	{
@@ -69,20 +56,18 @@ void	ft_stkdel(t_stack *head)
 	}
 }
 
-/*takes both argc and argv as params
+/*takes a matrix of strings and it's length as parameters
 creates the 'stacks' and fills 'a' with the numbers
 RETURNS: 1 all good, 0 error*/
-int	populate_stack(t_stack **stack_a, t_stack **stack_b, int argc, char *args[])
+int	populate_stack(t_stack **stack_a, t_stack **stack_b, int len, char *args[])
 {
-	int	i;
+	int		i;
 	t_stack	*node;
-	
+
 	*stack_a = NULL;
 	*stack_b = NULL;
-	//ft_printf("populating:\n");
-	//ft_print_arr(args);
 	i = 0;
-	while (i < argc)
+	while (i < len)
 	{
 		node = ft_stknew(ft_atoi(args[i]));
 		if (!node)

@@ -6,7 +6,7 @@
 /*   By: topiana- <topiana-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/11 19:48:50 by topiana-          #+#    #+#             */
-/*   Updated: 2025/01/13 13:30:44 by topiana-         ###   ########.fr       */
+/*   Updated: 2025/01/13 15:25:55 by topiana-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ void	ft_stkdel(t_stack *head)
 /*takes a matrix of strings and it's length as parameters
 creates the 'stacks' and fills 'a' with the numbers
 RETURNS: 1 all good, 0 error*/
-int	populate_stack(t_stack **stack_a, t_stack **stack_b, int len, char *args[])
+int	populate_stack(t_stack **stack_a, t_stack **stack_b, int len, char **args)
 {
 	int		i;
 	t_stack	*node;

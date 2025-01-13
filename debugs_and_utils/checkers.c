@@ -6,7 +6,7 @@
 /*   By: topiana- <topiana-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/11 19:39:16 by topiana-          #+#    #+#             */
-/*   Updated: 2025/01/13 13:29:41 by topiana-         ###   ########.fr       */
+/*   Updated: 2025/01/13 15:44:58 by topiana-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,7 @@ int	valid_int(char *s)
 	1. only integers (no floats) bigger than INT_MIN and smaller than INT_MAX
 	2. no repetitions
 RETURNS: 1 all good, 0 error*/
-int	parse_ready(int len, char *args[])
+int	parse_ready(int len, char **args)
 {
 	int	i;
 	int	j;

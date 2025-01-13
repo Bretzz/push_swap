@@ -6,7 +6,7 @@
 /*   By: topiana- <topiana-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/11 17:19:02 by topiana-          #+#    #+#             */
-/*   Updated: 2025/01/13 13:27:04 by topiana-         ###   ########.fr       */
+/*   Updated: 2025/01/13 15:43:00 by topiana-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ static int	clean_startup(t_stack **stack_a, t_stack **stack_b,
 	{
 		args = ft_split(argv[1], ' ');
 		len = ft_arrlen(args);
-		if (len == 1)
+		if (len <= 1)
 		{
 			ft_free_arr(args);
 			return (1);

@@ -6,7 +6,7 @@
 /*   By: topiana- <topiana-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/11 17:16:01 by topiana-          #+#    #+#             */
-/*   Updated: 2025/01/13 13:47:54 by topiana-         ###   ########.fr       */
+/*   Updated: 2025/01/13 15:26:09 by topiana-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,14 +63,14 @@ size_t	ft_arrlen(char **arr);
 size_t	ft_stklen(t_stack *head);
 void	ft_stkdel(t_stack *head);
 int		populate_stack(t_stack **stack_a, t_stack **stack_b,
-			int argc, char *argv[]);
+			int len, char **args);
 int		ft_free_arr(char **arr);
 
 void	print_stack(t_stack *head_a, t_stack *head_b);
 void	ft_print_arr(char **arr);
 
 //checkers
-int		parse_ready(int argc, char *argv[]);
+int		parse_ready(int argc, char **args);
 int		stk_issorted(t_stack *head);
 
 #endif

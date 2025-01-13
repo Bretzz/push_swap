@@ -6,7 +6,7 @@
 /*   By: totommi <totommi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/11 17:19:02 by topiana-          #+#    #+#             */
-/*   Updated: 2025/01/12 14:48:20 by totommi          ###   ########.fr       */
+/*   Updated: 2025/01/13 02:03:02 by totommi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -326,6 +326,7 @@ int	migrate_to_b(t_stack **head_a, t_stack **head_b)
 int	main(int argc, char *argv[])
 {
 	int		moves;
+	size_t	len;
 	char	**args;
 	t_stack	*stack_a;
 	t_stack	*stack_b;
@@ -335,17 +336,22 @@ int	main(int argc, char *argv[])
 	if (argc == 2)
 	{
 		args = ft_split(argv[1], ' ');
-		argc = ft_arrlen(args);
+		len = ft_arrlen(args);
+		if (len == 1)
+			return (1);
 		//ft_print_arr(args);
 	}
 	else
+	{
 		args = &argv[1];
-	if (!parse_ready(argc, args))
+		len = argc - 1;
+	}
+	if (!parse_ready(len, args))
 	{
 		ft_printf("Error\n");
 		return (1);
 	}
-	if (!populate_stack(&stack_a, &stack_b, argc, args))
+	if (!populate_stack(&stack_a, &stack_b, len, args))
 	{
 		ft_stkdel(stack_a);
 		ft_stkdel(stack_b);

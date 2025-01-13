@@ -6,7 +6,7 @@
 /*   By: totommi <totommi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/11 19:39:16 by topiana-          #+#    #+#             */
-/*   Updated: 2025/01/12 14:47:58 by totommi          ###   ########.fr       */
+/*   Updated: 2025/01/13 01:57:31 by totommi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,12 +113,12 @@ int	parse_ready(int argc, char *args[])
 	{
 		if (!valid_int(args[i]))
 		{
-			ft_printf("invalid int '%s'\n", args[i]);
+			//ft_printf("invalid int '%s'\n", args[i]);
 			return (0);
 		}
 		if (overflow_check(args[i]))
 		{
-			ft_printf("overflowing '%s'\n", args[i]);
+			//ft_printf("overflowing '%s'\n", args[i]);
 			return (0);
 		}
 		i++;
@@ -131,7 +131,7 @@ int	parse_ready(int argc, char *args[])
 		{
 			if (i != j && ft_atoi(args[i]) == ft_atoi(args[j]))
 			{
-				ft_printf("ddouble '%s'\n", args[i]);
+				//ft_printf("double '%s'\n", args[i]);
 				return (0);
 			}
 			j++;

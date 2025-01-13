@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: topiana- <topiana-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: totommi <totommi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/11 17:19:02 by topiana-          #+#    #+#             */
-/*   Updated: 2025/01/13 16:30:40 by topiana-         ###   ########.fr       */
+/*   Updated: 2025/01/13 12:49:04 by totommi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ void	ft_print_arr(char **arr)
 /*takes a head pointer as parameter and prints the whole stack*/
 void	print_stack(t_stack *head_a, t_stack *head_b)
 {
+	ft_printf("====\n");
 	while (head_a || head_b)
 	{
 		if (head_a)
@@ -47,7 +48,7 @@ void	print_stack(t_stack *head_a, t_stack *head_b)
 		}
 		ft_printf("\n");
 	}
-	ft_printf("- -\na b\n\n");
+	ft_printf("- -\na b\n====\n");
 }
 
 /*parses the input and populates the stack
@@ -109,6 +110,12 @@ int	main(int argc, char *argv[])
 
 	if (clean_startup(&stack_a, &stack_b, argc, argv))
 		return (1);
+	if (stk_issorted(stack_a))
+	{
+		ft_stkdel(stack_a);
+		ft_stkdel(stack_b);
+		return (0);
+	}
 	moves = 0;
 	moves += migrate_to_b(&stack_a, &stack_b);
 	while (stack_b)

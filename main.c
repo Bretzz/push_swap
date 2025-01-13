@@ -6,7 +6,7 @@
 /*   By: topiana- <topiana-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/11 17:19:02 by topiana-          #+#    #+#             */
-/*   Updated: 2025/01/13 16:30:40 by topiana-         ###   ########.fr       */
+/*   Updated: 2025/01/13 18:53:41 by topiana-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,6 +109,8 @@ int	main(int argc, char *argv[])
 
 	if (clean_startup(&stack_a, &stack_b, argc, argv))
 		return (1);
+	if (stk_issorted(stack_a))
+		return (0);
 	moves = 0;
 	moves += migrate_to_b(&stack_a, &stack_b);
 	while (stack_b)

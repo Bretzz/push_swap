@@ -6,7 +6,7 @@
 /*   By: topiana- <topiana-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/11 17:19:02 by topiana-          #+#    #+#             */
-/*   Updated: 2025/01/13 15:43:00 by topiana-         ###   ########.fr       */
+/*   Updated: 2025/01/13 16:30:40 by topiana-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,7 +111,6 @@ int	main(int argc, char *argv[])
 		return (1);
 	moves = 0;
 	moves += migrate_to_b(&stack_a, &stack_b);
-	moves += quick_a(&stack_a, &stack_b);
 	while (stack_b)
 		moves += push_it(&stack_a, &stack_b, cheapest_push(stack_a, stack_b));
 	moves += low_on_top(&stack_a, &stack_b);

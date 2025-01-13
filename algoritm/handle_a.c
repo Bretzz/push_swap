@@ -6,7 +6,7 @@
 /*   By: topiana- <topiana-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 13:14:10 by topiana-          #+#    #+#             */
-/*   Updated: 2025/01/13 13:32:41 by topiana-         ###   ########.fr       */
+/*   Updated: 2025/01/13 16:30:54 by topiana-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,19 +24,6 @@ int	migrate_to_b(t_stack **head_a, t_stack **head_b)
 	while ((*head_a)->next->next)
 		moves += pb(head_a, head_b);
 	return (moves);
-}
-
-/*takes the 'a' stack after the 'migration' and the 'b' stack as parameters
-applies 'sa' if the first number of 'a' is bigger than the second
-RETURNS: 1 if it was, 0 if it wasn't*/
-int	quick_a(t_stack **head_a, t_stack **head_b)
-{
-	if ((*head_a)->nb > (*head_a)->next->nb)
-	{
-		sa(head_a, head_b);
-		return (1);
-	}
-	return (0);
 }
 
 /*sets up 'a' to recive 'nb' from 'b'*/

@@ -6,7 +6,7 @@
 /*   By: topiana- <topiana-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 13:12:25 by topiana-          #+#    #+#             */
-/*   Updated: 2025/01/13 13:38:38 by topiana-         ###   ########.fr       */
+/*   Updated: 2025/01/13 16:30:59 by topiana-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,4 +68,17 @@ int	slot_ready(t_stack *head, int nb)
 	if (i > (len / 2))
 		i = len - i;
 	return (i);
+}
+
+/*takes the 'a' stack after the 'migration' and the 'b' stack as parameters
+applies 'sa' if the first number of 'a' is bigger than the second
+RETURNS: 1 if it was, 0 if it wasn't*/
+int	quick_a(t_stack **head_a, t_stack **head_b)
+{
+	if ((*head_a)->nb > (*head_a)->next->nb)
+	{
+		sa(head_a, head_b);
+		return (1);
+	}
+	return (0);
 }

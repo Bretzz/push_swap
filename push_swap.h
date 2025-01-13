@@ -6,7 +6,7 @@
 /*   By: topiana- <topiana-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/11 17:16:01 by topiana-          #+#    #+#             */
-/*   Updated: 2025/01/13 15:26:09 by topiana-         ###   ########.fr       */
+/*   Updated: 2025/01/13 16:30:44 by topiana-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,6 @@ int		rra_rb(t_stack **head_a, t_stack **head_b, int a, int b);
 int		ra_rrb(t_stack **head_a, t_stack **head_b, int a, int b);
 
 int		migrate_to_b(t_stack **head_a, t_stack **head_b);
-int		quick_a(t_stack **head_a, t_stack **head_b);
 int		rotate_a(t_stack **head_a, t_stack **head_b, int nb);
 int		low_on_top(t_stack **head_a, t_stack **head_b);
 

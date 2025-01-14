@@ -6,7 +6,7 @@
 /*   By: topiana- <topiana-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/11 17:19:02 by topiana-          #+#    #+#             */
-/*   Updated: 2025/01/14 13:12:39 by topiana-         ###   ########.fr       */
+/*   Updated: 2025/01/14 19:19:04 by topiana-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,7 +110,7 @@ int	main(int argc, char *argv[])
 
 	if (clean_startup(&stack_a, &stack_b, argc, argv))
 		return (1);
-	if (!stk_issorted(stack_a))
+	if (stk_issorted(stack_a))
 	{
 		ft_stkdel(stack_a);
 		ft_stkdel(stack_b);

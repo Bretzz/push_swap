@@ -25,9 +25,9 @@ ARS	:= libft/libft.a
 VPATH = operations debugs_and_utils algoritm
 
 EXE = nyaa
-OBJS = $(patsubst %.c, $(OBJ_DIR)/%.o, $(notdir $(SRCS)))
+LIBFT_DIR := libft
 OBJ_DIR := $(DIR)/obj
-LIBFT_DIR = libft
+OBJS = $(patsubst %.c, $(OBJ_DIR)/%.o, $(notdir $(SRCS)))
 GIDEF =	"""$\
 		\#default rules\n$\
 		.gitignore\n$\
@@ -45,17 +45,19 @@ GIDEF =	"""$\
 
 all: $(NAME)
 
-$(OBJ_DIR)/%.o: %.c
+$(OBJ_DIR):
 	@mkdir -p $(OBJ_DIR)
+
+$(OBJ_DIR)/%.o: %.c | $(OBJ_DIR)
 	@$(CC) $(CFLAGS) -I$(LIBFT_DIR) -I$(DIR) -c $< -o $(OBJ_DIR)/$(notdir $@)
 
 $(LIBFT_DIR):
 	@echo "${BOLD}creating libft...${RESET}"
-	@$(MAKE) -C $(LIBFT_DIR) | grep -q "Nothing to be done for 'all'." \
-		&& echo "${YELLOW}libft is up to date.${RESET}" \
-		|| true
+	@$(MAKE) -C $(LIBFT_DIR) | grep -q "Nothing to be done for" \
+	&& echo "${YELLOW}libft is up to date.${RESET}" \
+	|| true
 
-$(NAME): $(OBJS) $(LIBFT_DIR)
+$(NAME): $(LIBFT_DIR) $(OBJS)
 	@echo "${BOLD}compiling $(NAME)...${RESET}"
 	@$(CC) $(CFLAGS) $(OBJ_DIR)/* $(ARS) -o $(NAME)
 	@echo "${LIGHT_GREEN}DONE${RESET}"

@@ -49,16 +49,21 @@ $(OBJ_DIR)/%.o: %.c
 	@mkdir -p $(OBJ_DIR)
 	@$(CC) $(CFLAGS) -I$(LIBFT_DIR) -I$(DIR) -c $< -o $(OBJ_DIR)/$(notdir $@)
 
+$(OBJ_DIR):
+	@mkdir -p $(OBJ_DIR)
+
 $(LIBFT_DIR):
 	@echo "${BOLD}creating libft...${RESET}"
 	@$(MAKE) -C $(LIBFT_DIR) | grep -q "Nothing to be done for 'all'." \
-		&& echo "${YELLOW}libft is up to date.${RESET}" \
-		|| true
+	&& echo "${YELLOW}libft is up to date.${RESET}" \
+	|| true
 
 $(NAME): $(OBJS) $(LIBFT_DIR)
 	@echo "${BOLD}compiling $(NAME)...${RESET}"
-	@$(CC) $(CFLAGS) $(OBJ_DIR)/* $(ARS) -o $(NAME)
-	@echo "${LIGHT_GREEN}DONE${RESET}"
+	@echo "$(shell stat -c %Z $(OBJ_DIR)/*)" | grep -q "$(shell date +%s)" \
+	&& ($(CC) $(CFLAGS) $(OBJ_DIR)/* $(ARS) -o $(NAME) \
+	&& echo "${LIGHT_GREEN}DONE${RESET}") \
+	|| echo "${YELLOW}$(NAME) is up to date.${RESET}"
 
 $(EXE):
 	@echo "${BOLD}compiling tester...${RESET}"

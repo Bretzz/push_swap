@@ -51,9 +51,6 @@ $(OBJ_DIR):
 $(OBJ_DIR)/%.o: %.c | $(OBJ_DIR)
 	@$(CC) $(CFLAGS) -I$(LIBFT_DIR) -I$(DIR) -c $< -o $(OBJ_DIR)/$(notdir $@)
 
-$(OBJ_DIR):
-	@mkdir -p $(OBJ_DIR)
-
 $(LIBFT_DIR):
 	@echo "${BOLD}creating libft...${RESET}"
 	@$(MAKE) -C $(LIBFT_DIR) | grep -q "Nothing to be done for" \
@@ -95,4 +92,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re nyaa $(LIBFT_DIR) .gitignore show
+.PHONY: all clean fclean re nyaa $(LIBFT_DIR) $(OBJ_DIR) .gitignore show
